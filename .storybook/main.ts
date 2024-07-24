@@ -13,5 +13,12 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
+  viteFinal: (config, { configType }) => {
+    if(configType == 'PRODUCTION') {
+      config.base = '/rocket-infly/'
+    }
+
+    return config
+  }
 };
 export default config;
